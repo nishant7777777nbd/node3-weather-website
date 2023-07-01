@@ -6,15 +6,13 @@ const forecast= (latitude , longitude, callback) => {
   //  const baseUrl='https:api.openweathermap.org/data/2.5/weather?lat=26.6333&lon=92.8&appid=5d9e9f2216191dac607f5862268a1f31`
   console.log(latitude,longitude)
      const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
-
-    const apiKey = '5d9e9f2216191dac607f5862268a1f31'; 
     
 //    const lat= 26.6333;
 //  const lon=92.8; 
     
     const units = 'metric';
     
-    const requestUrl = `${baseUrl}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    const requestUrl = `${baseUrl}?lat=${latitude}&lon=${longitude}&appid=${process.env.FORECAST_API_TOKEN}&units=metric`;
 
     request.get(requestUrl, (error, response,body) => {
       
